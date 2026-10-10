@@ -1,15 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+from app.config import settings
 from app.models.base import Base
-from app.models import user
 
-
-
-DATABASE_URL = "sqlite:///users.db"
 
 engine = create_engine(
-    DATABASE_URL, 
+    settings.database_url, 
     connect_args = {"check_same_thread": False}
 )
 
@@ -19,4 +15,4 @@ SessionLocal = sessionmaker(
     bind = engine
 )
 
-Base.metadata.create_all(bind=engine)
+#Base.metadata.create_all(bind=engine)

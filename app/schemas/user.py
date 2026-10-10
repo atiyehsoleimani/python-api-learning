@@ -1,16 +1,15 @@
 from pydantic import BaseModel, EmailStr, ConfigDict
 
-class UserCreate(BaseModel):
+class UserBase(BaseModel):
     name: str
     email: EmailStr
 
-class UserResponse(BaseModel):
+class UserCreate(UserBase):
+    pass
+
+class UserResponse(UserBase):
     id: int
-    name: str
-    email: EmailStr
-
     model_config = ConfigDict(from_attributes=True)
 
-class UserUpdate(BaseModel):
-    name: str
-    email: EmailStr
+class UserUpdate(UserBase):
+    pass

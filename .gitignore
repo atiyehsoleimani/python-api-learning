@@ -6,6 +6,7 @@ __pycache__/
 .Python
 env/
 venv/
+.venv/
 .env
 
 # Database
@@ -21,3 +22,7 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+__pycache__/
+*.pyc
+*.pyo
